@@ -35,7 +35,7 @@ if(clickedGameBox.length==gamebox.length){
       $("body").removeClass("game-over");
     }, 200);
 
-    startOver();
+    // startOver();
 }
 
 }
