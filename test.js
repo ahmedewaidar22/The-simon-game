@@ -50,6 +50,8 @@ function startOver() {
 function nextSequence(){
     clickedGameBox=[]
  level++;
+  $("#level-title").text("your level is "+level);
+
     var i=Math.floor(Math.random() * 4)
      console.log(colorbutton[i])
     gamebox.push( colorbutton[i]);
