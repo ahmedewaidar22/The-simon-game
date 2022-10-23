@@ -1,19 +1,19 @@
  flag = true
  gamebox=[]
+level=0
 colorbutton=["green","red","yellow","blue"]
 $("body").keypress(function (e) { 
     console.log(e.key);
     if(e.key=="a" && flag==true){
 
         nextSequence();
-        //  flag=false
+        flag=false
     }
 });
 
 $(".btn").click(function () { 
     var Id=$(this).attr("id");
     clickedGameBox.push(Id)
-    // animation()
     console.log(Id)
     animation(Id)
     playSound(Id)
@@ -35,13 +35,21 @@ if(clickedGameBox.length==gamebox.length){
       $("body").removeClass("game-over");
     }, 200);
 
-    // startOver();
+    startOver();
 }
 
 }
+
+function startOver() {
+  level = 0;
+  gamebox = [];
+  flag = false;
+}
+
 
 function nextSequence(){
     clickedGameBox=[]
+ level++;
     var i=Math.floor(Math.random() * 4)
      console.log(colorbutton[i])
     gamebox.push( colorbutton[i]);
